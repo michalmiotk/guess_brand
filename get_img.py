@@ -1,13 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
-import re
 
 def is_match_exactly_this_class(bs4tag):
     return True if len(bs4tag['class']) == 1 else False
 
 def get_all_car_imgs_relative_url(relative_path):
     r = requests.get('https://mklr.pl'+relative_path)
-    soup = BeautifulSoup(r.content, features="html.parser")
+    return get_all_car_imgs_relative_url(str(r.content))
+
+def get_all_car_imgs_from_html(html_text):
+    soup = BeautifulSoup(html_text, features="html.parser")
     div_with_imgs = soup.find_all("div",{"class": 'pictureImage'})
     relative_urls = []
     for div in div_with_imgs:
@@ -15,6 +17,7 @@ def get_all_car_imgs_relative_url(relative_path):
             img_src = div.a.img['src']
             relative_urls.append(img_src)
     return relative_urls
+
 
 def get_one_img_url(page_relative_path):
     car_imgs_relative_url = get_all_car_imgs_relative_url(page_relative_path)
