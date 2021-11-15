@@ -9,6 +9,30 @@
         <figure>
             <figcaption>Podaj markę tego pojazdu</figcaption>
             <img src={{car_img_link}}></img>
+            <select id="greet" onchange="getOption()">
+                {% for brand in car_brands %}
+                    <option value= "{{ brand }}" {% if brand != true_brand %} selected {% endif %}>{{brand}}</option>"
+                    {{ option }}
+                {% endfor %}
+            </select>
         </figure>
+        <div>
+            <p id="result_text"></p>
+            <button onClick="window.location.reload();">New task</button>
+        </div>
+        <script>
+            function getOption() {
+                let selectedValue = document.getElementById('greet').value;
+                console.log(selectedValue);
+                console.log("a powinno" + '{{ true_brand }}')
+                let s= document.getElementById("result_text");
+                if(selectedValue == '{{ true_brand }}'){
+                    console.log("zwyciestwo");
+                    s.innerHTML = 'good answer';
+                }else{
+                    s.innerHTML = 'bad answer';
+                }
+            }
+        </script>
      </body>
 </html>
