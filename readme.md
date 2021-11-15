@@ -2,3 +2,9 @@
 ```
 python -m pytest test
 ```
+
+# how to start server
+
+```
+flask run
+```
