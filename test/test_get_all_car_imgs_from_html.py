@@ -18,4 +18,4 @@ def test_get_all_car_imgs_get_all_car_imgs_from_html():
             </html>
             """
     
-    assert get_all_car_imgs_from_html(webpage) == "tajne_dane"
+    assert get_all_car_imgs_from_html(webpage) == ["tajne_dane"]
