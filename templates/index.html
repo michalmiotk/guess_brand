@@ -4,35 +4,26 @@
         <meta charset="UTF-8">
         <title>Please give brand name</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
         <figure>
             <figcaption>Podaj markę tego pojazdu</figcaption>
             <img src={{car_img_link}}></img>
+        </figure>
+        <div id="answer">
             <select id="greet" onchange="getOption()">
                 {% for brand in car_brands %}
                     <option value= "{{ brand }}" {% if brand != true_brand %} selected {% endif %}>{{brand}}</option>"
                     {{ option }}
                 {% endfor %}
             </select>
-        </figure>
-        <div>
-            <p id="result_text"></p>
-            <button onClick="window.location.reload();">New task</button>
+            <div>
+                <p id="result_text"></p>
+                <button onClick="window.location.reload();">New task</button>
+            </div>
         </div>
-        <script>
-            function getOption() {
-                let selectedValue = document.getElementById('greet').value;
-                console.log(selectedValue);
-                console.log("a powinno" + '{{ true_brand }}')
-                let s= document.getElementById("result_text");
-                if(selectedValue == '{{ true_brand }}'){
-                    console.log("zwyciestwo");
-                    s.innerHTML = 'good answer';
-                }else{
-                    s.innerHTML = 'bad answer';
-                }
-            }
-        </script>
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>    
+            
      </body>
 </html>
