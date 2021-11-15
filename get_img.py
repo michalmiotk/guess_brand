@@ -14,8 +14,9 @@ def get_all_car_imgs_from_html(html_text):
     relative_urls = []
     for div in div_with_imgs:
         if is_match_exactly_this_class(div):
-            img_src = div.a.img['src']
-            relative_urls.append(img_src)
+            if div.a.img is not None:
+                img_src = div.a.img['src']
+                relative_urls.append(img_src)
     return relative_urls
 
 def get_one_img_url(page_relative_path):
