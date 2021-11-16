@@ -13,3 +13,5 @@ flask run
 ```
 $env:FLASK_ENV = "development" ; flask run
 ```
+
+![result page](docs/readme/howlooks.PNG)
