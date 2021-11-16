@@ -21,6 +21,11 @@
             <div>
                 <p id="result_text"></p>
                 <button onClick="window.location.reload();">New task</button>
+                <button onClick="
+                    let selected = document.getElementById('greet');
+                    selected.value = '{{ true_brand}}';
+                    console.log('ustai');
+                ">Get answer</button>
             </div>
         </div>
         <script>
