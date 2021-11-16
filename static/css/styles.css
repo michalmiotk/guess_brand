@@ -34,10 +34,20 @@ button{
 
 
 #answer{
-  background-color: blue;
   display: flex;
   flex-direction: column;
 }
+
+select{
+  outline: 0px;
+  box-shadow: none;
+  background: 000;
+  background-color: black;
+  color: aliceblue;
+  background-image: none;
+  cursor: pointer;
+}
+
 
 @media screen and (max-width: 500px) {
   #answer{
