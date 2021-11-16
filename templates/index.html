@@ -7,10 +7,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
-        <figure>
-            <figcaption>Please give brand name</figcaption>
-            <img src={{car_img_link}}></img>
-        </figure>
+        <img src={{car_img_link}}></img>
         <div id="answer">
             <select id="greet" onchange="getOption()">
                 {% for brand in car_brands %}
@@ -19,7 +16,7 @@
                 {% endfor %}
             </select>
             <div>
-                <p id="result_text"></p>
+                <p id="result_text">Please give brand name</p>
                 <button onClick="window.location.reload();">New task</button>
                 <button onClick="
                     let selected = document.getElementById('greet');
