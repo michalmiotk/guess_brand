@@ -1,9 +1,34 @@
 body {
     background-color: lightblue;
-  }
+}
+figure{
+  background-color: blueviolet;
+  width: 100vw;
+}
+img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 5%;
+}
+
+
 
   #answer{
     background-color: blue;
     display: flex;
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 500px) {
+    #answer{
+      flex-direction: column;
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    #answer button{
+      flex-direction: column;
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
   }
