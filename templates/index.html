@@ -23,7 +23,10 @@
                 <button onClick="window.location.reload();">New task</button>
             </div>
         </div>
-        <script src="{{ url_for('static', filename='js/index.js') }}"></script>    
-            
+        <script>
+            {% block code %}
+                {{js|safe}}
+            {% endblock code %}
+        </script>
      </body>
 </html>

@@ -12,7 +12,8 @@ def main_page():
     brand_url = brands[true_brand]
     car_img_link = get_one_img_url(brand_url)
     car_brands = list(brands.keys())
-    return render_template('index.html', car_img_link=car_img_link, car_brands=car_brands, true_brand=true_brand)
+    js = render_template('js/index.js', true_brand=true_brand)
+    return render_template('index.html', car_img_link=car_img_link, car_brands=car_brands, true_brand=true_brand, js=js)
 
 if __name__ == "__main__":
   app.run()
