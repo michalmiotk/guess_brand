@@ -3,6 +3,11 @@
 python -m pytest test
 ```
 
+# how to install
+```
+pip3 install -r requirements.txt
+```
+
 # how to start server
 
 ```
