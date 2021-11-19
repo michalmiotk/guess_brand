@@ -7,16 +7,11 @@ body {
   background-size: 10px 10px, 10px 10px, 10px 5px;
   background-position: 0px 0px, 5px 5px, 0px 0px;
 }
+
 p{
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: yellow;
-}
-figure{
-  background-color: blueviolet;
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 img{
@@ -24,7 +19,6 @@ img{
   margin-right: auto;
   display: block;
   max-width: 90vw;
-  max-height: 80vh;
   border-radius: 2%;
 }
 
@@ -52,10 +46,11 @@ select{
 @media screen and (max-width: 500px) {
   #answer{
     flex-direction: column;
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%; 
   }
   #answer button{
     flex-direction: column;
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%; 
   }
 }
+
