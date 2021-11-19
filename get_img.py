@@ -19,14 +19,21 @@ def get_all_car_imgs_from_html(html_text):
                 relative_urls.append(img_src)
     return relative_urls
 
-def get_last_from_list_to_not_have_info_image(car_imgs_relative_url):
-    return car_imgs_relative_url[-1]
+def get_car_from_list(car_imgs_relative_url):
+    forbidden_url = "/uimages/services/motokiller/i18n/pl_PL/201403/1394231039_by_Charakterek.jpg?1394336707"
+    if len(car_imgs_relative_url):
+        for url in car_imgs_relative_url:
+            if url != forbidden_url:
+                return url 
+        
+    return None
 
 def get_one_img_url(page_relative_path):
     car_imgs_relative_url = get_all_car_imgs_urls(relative_path=page_relative_path)
-    car_relative_url = get_last_from_list_to_not_have_info_image(car_imgs_relative_url)
-    car_img_full_url = 'https://mklr.pl' + car_relative_url
-    return car_img_full_url
+    car_relative_url = get_car_from_list(car_imgs_relative_url)
+    if car_relative_url is None:
+        return None
+    return 'https://mklr.pl' + car_relative_url
 
    
 if __name__=='__main__':

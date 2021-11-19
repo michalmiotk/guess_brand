@@ -2,3 +2,4 @@ pytest
 flask
 requests
 bs4
+pytest
