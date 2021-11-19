@@ -7,24 +7,26 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     </head>
     <body>
-        <img src={{car_img_link}}></img>
-        <div id="answer">
-            <select id="greet" onchange="getOption()">
-                <option selected disabled>Please give brand name</option>
-                {% for brand in car_brands %}
-                    <option value="{{ brand }}">{{brand}}</option>"
-                    {{ option }}
-                {% endfor %}
-            </select>
-            <div>
-                <p id="result_text"></p>
-                <button onClick="window.location.reload();">New task</button>
-                <button onClick="
-                    let selected = document.getElementById('greet');
-                    selected.value = '{{ true_brand}}';
-                    getOption();
-                    console.log('ustai');
-                ">Get answer</button>
+        <div class="content">
+            <img src={{car_img_link}}></img>
+            <div id="answer">
+                <select id="greet" onchange="getOption()">
+                    <option selected disabled>Please give brand name</option>
+                    {% for brand in car_brands %}
+                        <option value="{{ brand }}">{{brand}}</option>"
+                        {{ option }}
+                    {% endfor %}
+                </select>
+                <div>
+                    <p id="result_text"></p>
+                    <button onClick="window.location.reload();">New task</button>
+                    <button onClick="
+                        let selected = document.getElementById('greet');
+                        selected.value = '{{ true_brand}}';
+                        getOption();
+                        console.log('ustai');
+                    ">Get answer</button>
+                </div>
             </div>
         </div>
         <script>
